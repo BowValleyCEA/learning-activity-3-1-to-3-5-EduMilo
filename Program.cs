@@ -43,15 +43,19 @@ void LearningActivity31()
     }
 
     Console.WriteLine(ConvertTempInString(charInput, value));
+    Console.WriteLine("Press enter to move on to the next Learning Activity.");
     Console.ReadLine();
 }
 void LearningActivity32()
 {
+    Console.Clear();
     Console.WriteLine("This is the function for Learning Activity 3.2!");
     String[] classmates = new string[14];
     int[] classAges = new int[14];
     String[] wonders = new string[7];
     //TODO: populate arrays
+    Console.WriteLine("Press enter to move on to the next Learning Activity.");
+    Console.ReadLine();
 }
 void LearningActivity33()
 {
@@ -69,6 +73,7 @@ void LearningActivity33()
 
     while (!gameOver)
     {
+        //get input
         if (xTurn)
         {
             Console.WriteLine("It's X's turn!");
@@ -90,6 +95,7 @@ void LearningActivity33()
             Console.WriteLine("Invalid Input! Goodbye!");
             return;
         }
+        //present board
         Console.Clear();
         updateBoard(ticTacToeBoard, inputX, inputY, xTurn);
         displayBoard(ticTacToeBoard);
@@ -106,6 +112,7 @@ void LearningActivity33()
     }
 
     Console.WriteLine("Game Over!");
+    //Print out who won
     if(currentWinnerInt == 1)
     {
         Console.WriteLine("X is the winner!");
@@ -116,6 +123,9 @@ void LearningActivity33()
     {
         Console.WriteLine("It was a Draw!");
     }
+
+    Console.WriteLine("Press enter to move on to the next Learning Activity.");
+    Console.ReadLine();
 
     void initalizeBoard(int[,] board)
     {
@@ -247,14 +257,59 @@ void LearningActivity33()
 
 void LearningActivity34()
 {
-    int number;
-    bool success = int.TryParse(Console.ReadLine(), out number); //example code
+    //int number;
+    //bool success = int.TryParse(Console.ReadLine(), out number); //example code
+    Console.Clear();
     Console.WriteLine("This is the function for Learning Activity 3.4!");
+
+    int number;
+    bool stillValid = true;
+    while (stillValid)
+    {
+        Console.WriteLine("Enter your age!");
+
+        if (!int.TryParse(Console.ReadLine(), out number))
+        {
+            Console.WriteLine("Invalid Input! Goodbye.");
+            stillValid = false; //NOTE- setting stillValid as false is effectively the same as break, but it does prevent that one last comparison at the top of the loop.
+            break;
+        } else
+        {
+            if (number < 10 || number > 50)
+            {
+                Console.WriteLine("Your age is out of range!");
+                stillValid = false;
+                break;
+            }
+        }
+    }
+
+    Console.WriteLine("Press enter to move on to the next Learning Activity.");
+    Console.ReadLine();
+
 }
 
 void LearningActivity35()
 {
+    Console.Clear();
     int[] highScores = { 1272700, 1271100, 1243000, 1218000, 1214300, 1210800, 1210400, 1206800, 1178400 };
+    int sum = 0;
+    for(int i = 0; i < highScores.Length; i++)
+    {
+        sum += highScores[i];
+    }
+    double average = sum / highScores.Length; // the average!
+
+    double derivSum = 0;
+    for (int i = 0; i < highScores.Length; i++)
+    {
+        derivSum += Math.Pow(highScores[i], 2); //sum up the squared highscore values 
+    }
+    double derivAverage = derivSum / highScores.Length;
+    double standardDeviation = Math.Sqrt(derivAverage - Math.Pow(average, 2));
+
+
+
     Console.WriteLine("This is the function for Learning Activity 3.5!");
 }
 
