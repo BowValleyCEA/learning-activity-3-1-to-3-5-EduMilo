@@ -1,10 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Text;
 
-LearningActivity31();
-LearningActivity32();
-LearningActivity33();
-LearningActivity34();
+//LearningActivity31();
+//LearningActivity32();
+//LearningActivity33();
+//LearningActivity34();
 LearningActivity35();
 
 void LearningActivity31()
@@ -298,18 +298,25 @@ void LearningActivity35()
     {
         sum += highScores[i];
     }
-    double average = sum / highScores.Length; // the average!
+    double average = (double)sum / highScores.Length; // the average!
 
     double derivSum = 0;
     for (int i = 0; i < highScores.Length; i++)
     {
         derivSum += Math.Pow(highScores[i], 2); //sum up the squared highscore values 
     }
-    double derivAverage = derivSum / highScores.Length;
-    double standardDeviation = Math.Sqrt(derivAverage - Math.Pow(average, 2));
+    double derivAverage = derivSum / highScores.Length;// get the deriv average
+    double standardDeviation = Math.Sqrt(derivAverage - Math.Pow(average, 2)); // square the deviation between the deriv average and the (squared) average
 
+    //Averages should very much be in doubles and not integers. Considering how important those few significant digits can be when it comes to calculating things like Standard Deviation,
+    //it's cruicial that data isn't lost when doing these calculations. 
 
-
+    //intent DOES matter however. If you wanted to show these on an arcade machine, you would likely want to truncate and display it as an integer.
+    //For actual Data purposes however, you'd lose a great deal of accuracy by sticking with integers.
+    Console.WriteLine("Average:");
+    Console.WriteLine(average);
+    Console.WriteLine("Standard Deviation:");
+    Console.WriteLine(standardDeviation);
     Console.WriteLine("This is the function for Learning Activity 3.5!");
 }
 
