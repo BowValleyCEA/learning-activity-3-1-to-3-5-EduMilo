@@ -1,10 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Text;
 
-//LearningActivity31();
-//LearningActivity32();
-//LearningActivity33();
-//LearningActivity34();
+LearningActivity31();
+LearningActivity32();
+LearningActivity33();
+LearningActivity34();
 LearningActivity35();
 
 void LearningActivity31()
@@ -50,12 +50,33 @@ void LearningActivity32()
 {
     Console.Clear();
     Console.WriteLine("This is the function for Learning Activity 3.2!");
-    String[] classmates = new string[14];
+    String[] classmates =
+        { "Muhammad Moid Ali",
+        "Canyon Anderson",
+        "Bruno Castro-Gonzalez",
+        "Shea Coughlin",
+        "Hoang Quan Dinh",
+        "Cat Finley",
+        "Lukas Hoch",
+        "Lucas Ladan",
+        "Keegan Paxton",
+        "Jose Quinones Davila",
+        "Julianna Scouras",
+        "Ahamed Maahin",
+        "Emre Vatansever",
+        "Mason Wafta"
+    };
     int[] classAges = new int[14];
-    String[] wonders = new string[7];
-    //TODO: populate arrays
-    Console.WriteLine("Press enter to move on to the next Learning Activity.");
-    Console.ReadLine();
+    String[] wonders = {
+        "Colossus of Rhodes",
+        "Great Pyramid of Giza",
+        "Hanging Gardens of Babylon",
+        "The Lighthouse of Alexandria",
+        "Mausoleum at Halicarnassus",
+        "Statue of Zeus at Olympia",
+        "Temple of Artemis at Ephesus",
+        "Great Wall of China"
+    };
 }
 void LearningActivity33()
 {
