@@ -84,7 +84,7 @@ void LearningActivity33()
     Console.WriteLine("This is the function for Learning Activity 3.3!");
 
     int[,] ticTacToeBoard = new int[3, 3];
-    initalizeBoard(ticTacToeBoard);
+    InitializeBoard(ticTacToeBoard);
 
     int inputX;
     int inputY;
@@ -118,16 +118,16 @@ void LearningActivity33()
         }
         //present board
         Console.Clear();
-        updateBoard(ticTacToeBoard, inputX, inputY, xTurn);
-        displayBoard(ticTacToeBoard);
+        UpdateBoard(ticTacToeBoard, inputX, inputY, xTurn);
+        DisplayBoard(ticTacToeBoard);
         xTurn = !xTurn; // change turn
 
         //check if anyone has won
-        if(currentWinner(ticTacToeBoard) != 0)
+        if(CurrentWinner(ticTacToeBoard) != 0)
         {
-            currentWinnerInt = currentWinner(ticTacToeBoard);
+            currentWinnerInt = CurrentWinner(ticTacToeBoard);
             gameOver = true;
-        } else if(isDraw(ticTacToeBoard)){
+        } else if(IsDraw(ticTacToeBoard)){
             gameOver = true;
         }
     }
@@ -148,7 +148,7 @@ void LearningActivity33()
     Console.WriteLine("Press enter to move on to the next Learning Activity.");
     Console.ReadLine();
 
-    void initalizeBoard(int[,] board)
+    void InitializeBoard(int[,] board)
     {
         for (int i = 0; i < board.GetLength(0); i++)
         {
@@ -159,7 +159,7 @@ void LearningActivity33()
         }
     }
 
-    void updateBoard(int[,] board, int _inputX, int _inputY, bool _xTurn)
+    void UpdateBoard(int[,] board, int _inputX, int _inputY, bool _xTurn)
     {
         for (int x = 0; x < board.GetLength(0); x++)
         {
@@ -186,7 +186,7 @@ void LearningActivity33()
 
     }
 
-    void displayBoard(int[,] board)
+    void DisplayBoard(int[,] board)
     {
         StringBuilder stringBuilder = new StringBuilder();
 
@@ -220,7 +220,7 @@ void LearningActivity33()
         Console.WriteLine(stringBuilder.ToString());
     }
 
-    int currentWinner(int[,] board)
+    int CurrentWinner(int[,] board)
     {
         //end conditions
         //vertical win
@@ -257,7 +257,7 @@ void LearningActivity33()
         return 0;
     }
 
-    bool isDraw(int[,] board)
+    bool IsDraw(int[,] board)
     {
         //since this is always checked after winner has been checked, we can assume that the currentWinnerInt is zero
         //check if there are any empty spots left
